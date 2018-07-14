@@ -40,17 +40,16 @@ vector<int> FindRoutes(vector<Driver>& drivers, vector<Ride>& rides) {
 
 
 int main(int argc, char ** argv) {
-	ifstream input(argv[1]);
 	vector<string> vs(3);
 
 	int N;
-	input >> N;
+	cin >> N;
 
 	vector<Driver> drivers(N);
 
 	for (uint32_t i = 0; i < N; ++i) {
 		int x = 0, y = 0;
-		input >> x >> y;
+		cin >> x >> y;
 		Driver d;
 		d.p = make_pair(x, y);
 		d.idx = i;
@@ -63,7 +62,7 @@ int main(int argc, char ** argv) {
 
 	for (uint32_t i = 0; i < N; ++i) {
 		int xBegin = 0, yBegin = 0, xEnd = 0, yEnd;
-		input >> xBegin >> yBegin >> xEnd >> yEnd;
+		cin >> xBegin >> yBegin >> xEnd >> yEnd;
 		Ride r;
 		r.begin = make_pair(xBegin, yBegin);
 		r.end = make_pair(yBegin, yEnd);
